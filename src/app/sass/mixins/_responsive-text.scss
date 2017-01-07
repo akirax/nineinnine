@@ -1,0 +1,78 @@
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+/// Adjust font size, line height or bottom margin by breakpoint. Large breakpoint is used as default font size, line height and bottom margin.
+/// @param {mixed} $font-size
+/// @param {mixed} $line-height
+/// @param {mixed} $margin-bottom
+/// @param {mixed} $breakpt-pct
+/// @return void
+@mixin responsive-text($font-size: 48px, $line-height: 80px, $margin-bottom: 120px, $breakpt-pct: ( "md" : .10, "sm" : .20, "xs" : .75 )) {
+    // XS breakpoint
+    @if $font-size {
+        $unitless-font-size: strip-unit($font-size);
+        font-size: $unitless-font-size - ($unitless-font-size * map-get($breakpt-pct, "xs")) * 1px;
+    }
+    @if $line-height {
+        $unitless-line-height: strip-unit($line-height);
+        line-height: $unitless-line-height - ($unitless-line-height * map-get($breakpt-pct, "xs")) * 1px;
+    }
+    @if $margin-bottom {
+        $unitless-margin-bottom: strip-unit($margin-bottom);
+        margin-bottom: $unitless-margin-bottom - ($unitless-margin-bottom * map-get($breakpt-pct, "xs")) * 1px;
+    }
+
+
+    // SM breakpoint
+    @media (min-width: $screen-sm-min) {
+        @if $font-size {
+            $unitless-font-size: strip-unit($font-size);
+            font-size: $unitless-font-size - ($unitless-font-size * map-get($breakpt-pct, "sm")) * 1px;
+        }
+        @if $line-height {
+            $unitless-line-height: strip-unit($line-height);
+            line-height: $unitless-line-height - ($unitless-line-height * map-get($breakpt-pct, "sm")) * 1px;
+        }
+        @if $margin-bottom {
+            $unitless-margin-bottom: strip-unit($margin-bottom);
+            margin-bottom: $unitless-margin-bottom - ($unitless-margin-bottom * map-get($breakpt-pct, "sm")) * 1px;
+        }
+    }
+
+    // MD breakpoint
+    @media (min-width: $screen-md-min) {
+        @if $font-size {
+            $unitless-font-size: strip-unit($font-size);
+            font-size: $unitless-font-size - ($unitless-font-size * map-get($breakpt-pct, "md")) * 1px;
+        }
+        @if $line-height {
+            $unitless-line-height: strip-unit($line-height);
+            line-height: $unitless-line-height - ($unitless-line-height * map-get($breakpt-pct, "md")) * 1px;
+        }
+        @if $margin-bottom {
+            $unitless-margin-bottom: strip-unit($margin-bottom);
+            margin-bottom: $unitless-margin-bottom - ($unitless-margin-bottom * map-get($breakpt-pct, "md")) * 1px;
+        }
+    }
+
+    // LG breakpoint
+    @media (min-width: $screen-lg-min) {
+        @if $font-size {
+            font-size: $font-size;
+        }
+        @if $line-height {
+            line-height: $line-height;
+        }
+        @if $margin-bottom {
+            margin-bottom: $margin-bottom;
+        }
+    }
+}

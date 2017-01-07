@@ -1,0 +1,49 @@
+@import "mixins/responsive-text";
+
+.page-5 {
+    .team-for-kids,
+    .plan-international {
+        margin-bottom: $margin-bottom-xs;
+
+        @media (min-width: $screen-md-min) {
+            margin-bottom: $margin-bottom-md;
+        }
+
+        @media (min-width: $screen-lg-min) {
+            margin-bottom: 0;
+        }
+
+        .charity-logo {
+            margin: 0 auto $margin-bottom-xs/2 auto;
+            max-width: 276px;
+            width: 40%;
+
+            @media (min-width: $screen-sm-min) {
+                width: 50%;
+                margin-bottom: $margin-bottom-sm;
+
+                svg {
+                    height: 100px;
+                }
+            }
+
+            @media (min-width: $screen-md-min) {
+                margin: 0 auto $margin-bottom-md auto;
+            }
+
+            @media (min-width: $screen-lg-min) {
+                margin-bottom: $margin-bottom-lg;
+
+                svg {
+                    height: 100px;
+                }
+            }
+        }
+
+        p {
+            @include responsive-text(30px, 42px, 40px, ("md" : .10, "sm" : .20, "xs" : .60));
+
+            font-weight: 300;
+        }
+    }
+}

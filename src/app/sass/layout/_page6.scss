@@ -1,0 +1,27 @@
+.page-6 {
+    .map {
+        margin: 0 auto $margin-bottom-xs auto;
+        width: 98%;
+
+
+        .map-0 {
+            fill:#474747;
+        }
+
+        .map-1 {
+            fill:#5BB9F4;
+        }
+    }
+
+    @media only screen and (min-width: 321px) and (orientation: landscape) {
+        .map,
+        p:first-child {
+            margin-top: $margin-bottom-xs;
+        }
+
+        .map {
+            margin-bottom: 0;
+            width: 80%;
+        }
+    }
+}

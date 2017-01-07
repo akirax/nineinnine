@@ -1,0 +1,62 @@
+@import "mixins/responsive-text";
+
+.page-7 {
+    .tagline,
+    .container {
+        text-align: center;
+    }
+
+    .odometer {
+        @include responsive-text(118px, false, false, ("md" : .20, "sm" : .30, "xs" : .40));
+
+        color: $brand-primary;
+        font-weight: 700;
+
+        @media only screen and (min-width: 321px) and (orientation: landscape) {
+            font-size: 118 - (118 * .50) + 1px;
+        }
+    }
+
+    .tagline {
+        @include responsive-text(32px, false, false, ("md" : .20, "sm" : .30, "xs" : .40));
+        font-weight: 300;
+        display: block;
+        text-transform: uppercase;
+    }
+
+    .days,
+    .miles,
+    .calories {
+        .odometer {
+            opacity: 0;
+        }
+    }
+
+    .calories {
+        .odometer {
+            .odometer-formatting-mark {
+                display: none !important;
+            }
+        }
+    }
+
+    .od-items {
+        @include responsive-text(false, false, $margin-bottom-xs, ("md" : .20, "sm" : .30, "xs" : .40));
+
+        @media only screen and (min-width: 321px) and (max-width: 1024px) and (orientation: landscape) {
+            float: left;
+            margin-right: 15px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .od-items-wrapper {
+        width: auto;
+        margin: 0 auto;
+        overflow: hidden;
+        display: inline-block;
+    }
+}

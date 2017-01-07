@@ -1,0 +1,218 @@
+@import "mixins/responsive-text";
+
+body {
+    background-image: url(../images/jpgs/bg-320.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    @media (min-width: $screen-sm-min) {
+        background-image: url(../images/jpgs/bg-660.jpg);
+    }
+
+    @media (min-width: $screen-md-min) {
+        background-image: url(../images/jpgs/bg-980.jpg);
+    }
+
+    @media (min-width: $screen-lg-min) {
+        background-image: url(../images/jpgs/bg.jpg);
+    }
+}
+
+.charity-color {
+    font-weight: 700;
+
+    &.team-for-kids {
+        color: $charity-team4kids;
+    }
+
+    &.plan-international {
+        color: $charity-plan;
+    }
+}
+
+.team-for-kids {
+    .charity-bg-color,
+    .btn-primary {
+        background-color: $charity-team4kids;
+        border-color: lighten($charity-team4kids, 10%);
+    }
+
+    .btn-primary {
+        &:hover,
+        &:active {
+            background-color: darken($charity-team4kids, 10%);
+            border-color: lighten($charity-team4kids, 5%);
+        }
+    }
+}
+
+.plan-international {
+    .charity-bg-color,
+    .btn-primary {
+        background-color: $charity-plan;
+        border-color: lighten($charity-plan, 10%);
+    }
+
+    .btn-primary {
+        &:hover,
+        &:active {
+            background-color: darken($charity-plan, 10%);
+            border-color: lighten($charity-plan, 5%);
+        }
+    }
+}
+
+.team-for-kids,
+.plan-international {
+    .btn {
+        @include responsive-text(24px, 32px, false, ("md" : .20, "sm" : .30, "xs" : .30));
+        font-weight: 700;
+        text-transform: uppercase;
+
+        &.btn-block {
+            width: 75%;
+            margin: 0 auto $margin-bottom-xs/2 auto;
+
+            @media (min-width: $screen-sm-min) {
+                width: 75%;
+            }
+
+            @media (min-width: $screen-md-min) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.primary-color {
+    color: $brand-primary;
+}
+
+p {
+    @include responsive-text(32px, 48px, 64px, ("md" : .10, "sm" : .20, "xs" : .50));
+
+    font-weight: 300;
+
+    @media only screen and (min-width: 321px) and (max-width: 680px) and (orientation: landscape) {
+        font-size: 32 - (32 * .60) + 1px;
+        line-height: 48 - (48 * .60) + 1px;
+        margin-bottom: 64 - (64 * .60) + 1px;
+    }
+}
+
+.plan-logo {
+    .plan-0 {
+        fill: #fff;
+    }
+}
+
+.map-svg {
+    .map-0 {
+        fill:#333333;
+    }
+
+    .map-1 {
+        fill:#5BB9F4;
+    }
+
+    .map-2 {
+        fill:none;
+        stroke:#5BB9F4;
+        stroke-width:3;
+        stroke-miterlimit:10;
+    }
+}
+
+.paper {
+    .st0 {
+        fill:#BFBFBF;
+    }
+
+    .st1 {
+        fill:#D3D3D3;
+    }
+
+    .st2 {
+        fill-rule:evenodd;
+        clip-rule:evenodd;
+        fill:#2C1F1B;
+    }
+
+    .st3 {
+        fill:#2C1F1B;
+    }
+
+    .st4 {
+        fill:#010101;
+    }
+
+    .st5 {
+        fill:#363438;
+    }
+
+    .st6 {
+        clip-path:url(#SVGID_2_);
+    }
+
+    .st7 {
+        fill:#FFFFFF;
+    }
+
+    .st8 {
+        fill:#B77474;
+    }
+
+    .st9 {
+        fill:#5793A8;
+    }
+
+    .st10 {
+        fill:#888888;
+    }
+
+    .st11 {
+        fill:#A2A2A2;
+    }
+
+    .st12 {
+        fill:#F8E9D2;
+    }
+
+    .st13 {
+        fill:#8F5F5F;
+    }
+
+    .st14 {
+        clip-path:url(#SVGID_2_);
+        fill:#4A484A;
+    }
+
+    .st15 {
+        fill:none;
+        stroke:#171617;
+        stroke-width:3;
+        stroke-miterlimit:10;
+    }
+}
+
+.page-5,
+.page-6 {
+    @media only screen and (min-width: 321px) and (max-width: 680px) and (orientation: landscape) {
+        .col-md-6 {
+            width: 50%;
+            float: left;
+        }
+    }
+}
+
+.page-wrapper {
+    height: calc(100vh - 72px);
+}
+
+h2 {
+    @include responsive-text(68px, 78px, $margin-bottom-sm, ("md" : .20, "sm" : .30, "xs" : .60));
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $brand-primary;
+}

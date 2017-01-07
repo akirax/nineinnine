@@ -1,0 +1,12 @@
+@import "mixins/responsive-text";
+
+.page-3 {
+    strong {
+        text-transform: uppercase;
+        color: $brand-primary;
+    }
+
+    p {
+        @include responsive-text(32px, 42px, 48px, ("md" : .10, "sm" : .20, "xs" : .40));
+    }
+}

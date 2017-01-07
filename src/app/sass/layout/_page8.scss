@@ -1,0 +1,138 @@
+.page-8 {
+    p,
+    h4,
+    div {
+        text-align: center;
+    }
+
+    h4 {
+        font-weight: 300;
+        font-size: 30 - (30 * .60) + 1px;
+
+        @media (min-width: $screen-sm-min) {
+            font-size: 30 - (30 * .30) + 1px;
+        }
+
+        @media (min-width: $screen-md-min) {
+            font-size: 30 - (30 * .20) + 1px;
+        }
+
+        @media (min-width: $screen-lg-min) {
+            font-size: 30px;
+        }
+    }
+
+    @media (max-width: $screen-sm-max) {
+        p {
+            margin-bottom: $margin-bottom-xs;
+        }
+
+        .sponsor-wrapper {
+            margin-bottom: 10px;
+        }
+    }
+
+    .sponsor {
+        margin: 0 auto $margin-bottom-xs auto;
+        width: 75%;
+
+        @media (max-width: $screen-sm-max) {
+            margin-bottom: 5px;
+
+            &.gatorade {
+                svg {
+                    height: 50px;
+                }
+            }
+
+            &.sporting-news {
+                svg {
+                    height: 35px;
+                }
+            }
+
+            &.sketchers {
+                svg {
+                    height: 20px;
+                }
+            }
+        }
+
+        @media (min-width: $screen-md-min) {
+            margin-bottom: $margin-bottom-md;
+        }
+
+        @media (min-width: $screen-lg-min) {
+            margin-bottom: $margin-bottom-lg;
+        }
+
+        &.sporting-news {
+            max-width: 359px;
+        }
+
+        &.gatorade {
+            max-width: 150px;
+
+            .st0 {
+                fill:#161413;
+            }
+
+            .st1 {
+                fill:#E52935;
+            }
+
+            .st2 {
+                fill:#FFFFFF;
+            }
+
+            .st3 {
+                fill:#F9B018;
+            }
+        }
+
+        &.sketchers {
+            max-width: 359px;
+
+            .st0 {
+                fill:#FFFFFF;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 321px) and (max-width: 680px) and (orientation: landscape) {
+        h4 {
+            margin-top: 0;
+        }
+
+        p:first-child {
+            margin-top: $margin-bottom-sm/2;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .sponsor {
+            width: 60%;
+
+            &.gatorade {
+                svg {
+                    height: 50px;
+                }
+            }
+        }
+
+        .sponsor-wrapper {
+            float: left;
+            width: 50%;
+            margin: 0;
+        }
+
+        .row {
+            &.donate-btns {
+                width: 50%;
+                float: left;
+            }
+        }
+    }
+}

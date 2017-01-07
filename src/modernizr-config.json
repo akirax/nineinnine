@@ -1,0 +1,19 @@
+{
+  "minify": true,
+  "options": [
+    "setClasses"
+  ],
+  "feature-detects": [
+    "test/svg",
+    "test/css/backgroundsize",
+    "test/css/calc",
+    "test/css/displaytable",
+    "test/svg/asimg",
+    "test/svg/clippaths",
+    "test/svg/filters",
+    "test/svg/inline",
+    "test/svg/smil",
+    "test/url/data-uri",
+    "test/window/atob-btoa"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+    "host": "<enter host here>",
+    "user": "<enter user here>",
+    "password": "<enter password here>",
+    "destination": "<enter destination path on remote here>"
+}
